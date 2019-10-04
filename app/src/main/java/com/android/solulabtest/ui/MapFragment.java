@@ -360,6 +360,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleM
             if (mLocationPermissionGranted) {
                 mMap.setMyLocationEnabled(true);
                 mMap.getUiSettings().setMyLocationButtonEnabled(true);
+                mMap.setOnMyLocationClickListener(this);
             } else {
                 mMap.setMyLocationEnabled(false);
                 mMap.getUiSettings().setMyLocationButtonEnabled(false);

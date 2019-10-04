@@ -31,9 +31,11 @@ public class LocationAddress {
                         for (int i = 0; i < address.getMaxAddressLineIndex(); i++) {
                             sb.append(address.getAddressLine(i)).append("\n");
                         }
-                        sb.append(address.getLocality()).append("\n");
-                        sb.append(address.getPostalCode()).append("\n");
-                        sb.append(address.getCountryName());
+                        if (address.getMaxAddressLineIndex() == 0)
+                            sb.append(address.getAddressLine(0)).append("\n");
+                        sb.append("\nLocality : ").append(address.getLocality()).append("\n");
+                        sb.append("Postal code : ").append(address.getPostalCode()).append("\n");
+                        sb.append("Country : ").append(address.getCountryName());
                         result = sb.toString();
                     }
                 } catch (IOException e) {
@@ -45,7 +47,7 @@ public class LocationAddress {
                         message.what = 1;
                         Bundle bundle = new Bundle();
                         result = "Latitude: " + latitude + " Longitude: " + longitude +
-                                "\n\nAddress:\n" + result;
+                                "\n\nAddress: " + result;
                         bundle.putString("address", result);
                         message.setData(bundle);
                     } else {
