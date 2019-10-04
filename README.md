@@ -1,6 +1,6 @@
 # solulabtest
 
-- You can directly download APK from "APK" folder.
+- You can directly download debug APK from "APK" folder.
 - Or you can checkout this sourcecode & build.
  
 - Please tap current location Icon on top right corner to point on current location then start tracking by tapping FAB.
