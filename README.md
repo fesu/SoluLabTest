@@ -19,8 +19,4 @@
 => Tab 3
 	- It will show the added records on each milestone.
 	- List will get updated on each milestone automatically.
-	- List item shows
-		- Record ID
-		- Latitude
-		- Longitude
-		- Record created DateTime
+	- List item shows, Record ID, Latitude, Longitude, Record created DateTime
