@@ -20,7 +20,7 @@ public class DBManager {
 
     private Context context;
 
-    private SQLiteDatabase database;
+    private static SQLiteDatabase database;
 
     public DBManager(Context c) {
         context = c;
@@ -54,7 +54,7 @@ public class DBManager {
         }
     }
 
-    public Cursor fetch() {
+    private static Cursor fetch() {
         String[] columns = new String[] { DatabaseHelper._ID, DatabaseHelper.LATITUDE, DatabaseHelper.LONGITUDE,
                 DatabaseHelper.DISTANCE, DatabaseHelper.TIME };
         Cursor cursor = database.query(DatabaseHelper.TABLE_NAME, columns, null, null, null, null, DatabaseHelper._ID + " DESC");
@@ -64,7 +64,7 @@ public class DBManager {
         return cursor;
     }
 
-    public List<Locations> getLocationRecords() {
+    public static List<Locations> getLocationRecords() {
         Cursor c = fetch();
         List<Locations> locationList = new ArrayList<>();
         Locations locations;

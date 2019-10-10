@@ -1,4 +1,4 @@
-package com.android.solulabtest.ui.main;
+package com.android.solulabtest.view.main;
 
 import android.content.Context;
 
@@ -9,9 +9,9 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
 import com.android.solulabtest.R;
-import com.android.solulabtest.ui.DistanceFragment;
-import com.android.solulabtest.ui.MapFragment;
-import com.android.solulabtest.ui.RecordsFragment;
+import com.android.solulabtest.view.DistanceFragment;
+import com.android.solulabtest.view.MapFragment;
+import com.android.solulabtest.view.RecordsFragment;
 
 /**
  * A [FragmentPagerAdapter] that returns a fragment corresponding to

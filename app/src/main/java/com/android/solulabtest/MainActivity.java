@@ -10,7 +10,7 @@ import androidx.core.content.ContextCompat;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 import androidx.viewpager.widget.ViewPager;
 
-import com.android.solulabtest.ui.main.SectionsPagerAdapter;
+import com.android.solulabtest.view.main.SectionsPagerAdapter;
 import com.android.solulabtest.utils.Config;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;

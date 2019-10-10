@@ -1,4 +1,4 @@
-package com.android.solulabtest.ui.main;
+package com.android.solulabtest.view.main;
 
 import android.text.format.DateFormat;
 import android.view.LayoutInflater;
@@ -10,7 +10,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.android.solulabtest.R;
 import com.android.solulabtest.model.Locations;
-import com.android.solulabtest.utils.Utils;
 
 import java.util.Calendar;
 import java.util.List;

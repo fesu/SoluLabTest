@@ -1,4 +1,4 @@
-package com.android.solulabtest.ui;
+package com.android.solulabtest.view;
 
 import android.Manifest;
 import android.app.Activity;

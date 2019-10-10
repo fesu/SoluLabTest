@@ -3,8 +3,16 @@ package com.android.solulabtest.data;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
+
+import java.util.concurrent.Callable;
+
+import rx.Observable;
+import rx.Subscriber;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
+
+    private static final String TAG = DatabaseHelper.class.getSimpleName();
 
     // Table Name
     public static final String TABLE_NAME = "LOCATION_TRACK_RECORDS";
@@ -43,5 +51,16 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
         onCreate(db);
+    }
+
+    public <T> Observable<T> makeObservable(final Callable<T> func) {
+        return Observable.create(
+                subscriber -> {
+                    try {
+                        subscriber.onNext(func.call());
+                    } catch(Exception ex) {
+                        Log.e(TAG, "Error reading from the database", ex);
+                    }
+                });
     }
 }
